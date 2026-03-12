@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs & Prestations - DevJ</title>
+    <link rel="stylesheet" href="dev_fred/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-theme="dark">
+    <!-- Navigation (copié du site principal) -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="tech-text"><</span>
+                <span class="name">/DevJ</span>
+                <span class="tech-text">></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#hero" class="nav-link active"><i class="fas fa-home"></i><span>Accueil</span></a></li>
+                <li><a href="index.html#about" class="nav-link"><i class="fas fa-user"></i><span>À Propos</span></a></li>
+                <li><a href="index.html#skills" class="nav-link"><i class="fas fa-code"></i><span>Compétences</span></a></li>
+                <li><a href="index.html#projects" class="nav-link"><i class="fas fa-briefcase"></i><span>Projets</span></a></li>
+                <li><a href="index.html#services" class="nav-link"><i class="fas fa-dollar-sign"></i><span>Services</span></a></li>
+                <li><a href="index.html#methodology" class="nav-link"><i class="fas fa-project-diagram"></i><span>Méthode</span></a></li>
+                <li><a href="index.html#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section class="section pricing-hero">
+            <div class="section-header">
+                <h1 class="section-title">Services & Tarifs</h1>
+                <p class="section-sub">Des offres claires, des étapes transparentes — choisissez ce qui convient le mieux à votre projet.</p>
+            </div>
+        </section>
+
+        <section class="section pricing-list">
+            <div class="pricing-cards">
+                <article id="site-vitrine" class="pricing-card">
+                    <h3>Site Vitrine</h3>
+                    <div class="service-price">300 000 <span>FCFA</span></div>
+                    <p class="pricing-desc">Un site institutionnel ou portfolio simple, responsive, SEO-friendly et livré rapidement.</p>
+                    <h4>Ce que c'est</h4>
+                    <p>Un site Vitrine présente votre activité, vos services et facilite la prise de contact. Idéal pour visibilité et crédibilité.</p>
+                    <h4>Étapes de développement</h4>
+                    <ol>
+                        <li>Audit & briefing (1 jour)</li>
+                        <li>Maquette & validation (2-4 jours)</li>
+                        <li>Développement & intégration (3-7 jours)</li>
+                        <li>Tests, SEO basique & mise en ligne (1-2 jours)</li>
+                        <li>Formation + remise des accès</li>
+                    </ol>
+                    <h4>Justification du montant</h4>
+                    <p>Prix fixé pour couvrir la conception, le développement, l'hébergement 1 an et  support initial. Construit pour rapidité et maintenance minimale.</p>
+                    <h4>Projets similaires</h4>
+                    <div class="pricing-projects">
+                        <div class="mini-project">
+                            <img src="dev_fred/asset/eliko.PNG" alt="Eliko"/>
+                            <span>Eliko Voyage</span>
+                        </div>
+                    </div>
+                    <div class="pricing-actions">
+                        <a href="index.html#services" class="btn btn-ghost">Retour</a>
+                        <a href="index.html#contact" class="btn btn-primary">Commander</a>
+                        <a href="#ecommerce" class="btn btn-outline">Voir l'offre E-commerce</a>
+                    </div>
+                </article>
+
+                <article id="ecommerce" class="pricing-card">
+                    <h3>Site E-commerce</h3>
+                    <div class="service-price">500 000 <span>FCFA</span></div>
+                    <p class="pricing-desc">Boutique en ligne complète avec gestion produits, paiement sécurisé et espace admin.</p>
+                    <h4>Ce que c'est</h4>
+                    <p>Solution e-commerce clé en main pour vendre en ligne, gérer commandes et clients, avec formation à l'admin.</p>
+                    <h4>Étapes de développement</h4>
+                    <ol>
+                        <li>Recueil besoins & spécifications (2-3 jours)</li>
+                        <li>UX & maquettes (3-5 jours)</li>
+                        <li>Développement (4-8 semaines selon complexité)</li>
+                        <li>Tests, intégration paiement & sécurité</li>
+                        <li>Lancement & formation</li>
+                    </ol>
+                    <h4>Justification du montant</h4>
+                    <p>Prix basé sur l'intégration de paiement, sécurité, tableaux de bord et formation incluse. Permet montée en charge.</p>
+                    <h4>Projets similaires</h4>
+                    <div class="pricing-projects">
+                        <div class="mini-project">
+                            <img src="dev_fred/asset/eliko.PNG" alt="Eliko e-commerce"/>
+                            <span>Eliko - e-commerce</span>
+                        </div>
+                    </div>
+                    <div class="pricing-actions">
+                        <a href="#site-vitrine" class="btn btn-ghost">Voir Vitrine</a>
+                        <a href="index.html#contact" class="btn btn-primary">Commander</a>
+                        <a href="#sur-mesure" class="btn btn-outline">Voir Sur-Mesure</a>
+                    </div>
+                </article>
+
+                <article id="sur-mesure" class="pricing-card">
+                    <h3>Solution Sur Mesure</h3>
+                    <div class="service-price">Sur Devis</div>
+                    <p class="pricing-desc">Fonctionnalités avancées, intégrations spécifiques et accompagnement long terme.</p>
+                    <h4>Ce que c'est</h4>
+                    <p>Solution personnalisée adaptée à vos besoins métiers, incluant architecture, sécurité et scalabilité.</p>
+                    <h4>Étapes de développement</h4>
+                    <ol>
+                        <li>Atelier découverte & cadrage</li>
+                        <li>Prototype & validation</li>
+                        <li>Itérations & développement</li>
+                        <li>Tests, sécurité & déploiement</li>
+                        <li>Accompagnement post-lancement</li>
+                    </ol>
+                    <h4>Justification du montant</h4>
+                    <p>Le coût dépend des spécifications; le devis couvre l'architecture, sécurité, maintenance et SLAs.</p>
+                    <h4>Projets similaires</h4>
+                    <div class="pricing-projects">
+                        <div class="mini-project">
+                            <img src="dev_fred/asset/placeholder.png" alt="Projet sur mesure"/>
+                            <span>Projet sur-mesure</span>
+                        </div>
+                    </div>
+                    <div class="pricing-actions">
+                        <a href="#ecommerce" class="btn btn-ghost">Voir E-commerce</a>
+                        <a href="index.html#contact" class="btn btn-primary">Demander un devis</a>
+                        <a href="index.html#services" class="btn btn-outline">Retour aux services</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (copié) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="tech-text"><</span>
+                    <span class="name">/DevJ</span>
+                    <span class="tech-text">></span>
+                </div>
+                <p>Créer des expériences web exceptionnelles, une ligne de code à la fois.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html#hero">Accueil</a></li>
+                    <li><a href="index.html#about">À Propos</a></li>
+                    <li><a href="index.html#skills">Compétences</a></li>
+                    <li><a href="index.html#projects">Projets</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="index.html#services">Site Vitrine</a></li>
+                    <li><a href="index.html#services">E-commerce</a></li>
+                    <li><a href="index.html#services">Sur Mesure</a></li>
+                    <li><a href="index.html#contact">Devis Gratuit</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> devfred58@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +225 0767998373</p>
+                <p><i class="fas fa-map-marker-alt"></i> Yamoussoukro, CI</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DevJ - Frejus Kouadio | Tous droits réservés</p>
+            <p class="footer-tagline">Créé avec passion et beaucoup de café <i class="fas fa-coffee"></i></p>
+        </div>
+    </footer>
+
+    <script src="dev_fred/script.js"></script>
+</body>
+</html>

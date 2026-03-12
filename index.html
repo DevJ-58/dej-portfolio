@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frejus Kouadio - Développeur Frontend & IA</title>
+    <link rel="stylesheet" href="dev_fred/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-wrapper">
+            <div class="logo-loader">
+                <span class="loader-bracket"><</span>
+                <span class="loader-text">/DevJ</span>
+                <span class="loader-bracket">></span>
+            </div>
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- Particles Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="tech-text"><</span>
+                <span class="name">/DevJ</span>
+                <span class="tech-text">></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link active"><i class="fas fa-home"></i><span>Accueil</span></a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i><span>À Propos</span></a></li>
+                <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i><span>Compétences</span></a></li>
+                <li><a href="#projects" class="nav-link"><i class="fas fa-briefcase"></i><span>Projets</span></a></li>
+                <li><a href="#services" class="nav-link"><i class="fas fa-dollar-sign"></i><span>Services</span></a></li>
+                <li><a href="#methodology" class="nav-link"><i class="fas fa-project-diagram"></i><span>Méthode</span></a></li>
+                <li><a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i><span>FAQ</span></a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <i class="fas fa-code"></i>
+                    <span>Développeur Frontend & IA</span>
+                </div>
+                <h1 class="glitch" data-text="Frejus Kouadio">Frejus Kouadio</h1>
+                <h2 class="hero-subtitle">
+                    <span class="typed-text"></span>
+                    <span class="cursor">|</span>
+                </h2>
+                <p class="hero-description">
+                    Passionné par la création d'expériences web exceptionnelles et l'intelligence artificielle. 
+                    De Yamoussoukro à l'international, je transforme vos idées en solutions numériques innovantes.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <div>
+                            <strong data-target="5">0</strong>
+                            <span>Projets</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong data-target="2">0</strong>
+                            <span>Années</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <strong data-target="100">0</strong>
+                            <span>Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Mes Projets</span>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i>
+                        <span>Me Contacter</span>
+                    </a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/devj-58" target="_blank" rel="noopener" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/frejus-kouadio-316238329" target="_blank" rel="noopener" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/2250767998373" target="_blank" rel="noopener" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61572566502278" target="_blank" rel="noopener" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img id="heroImg" src="dev_fred/asset/2026010323251463.png" alt="DevJ" class="hero-img">
+                <div class="image-wrapper">
+                    <div class="tech-circle"></div>
+                    <div class="tech-grid"></div>
+                    <div class="floating-elements">
+                        <div class="float-icon" style="--delay: 0s">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="float-icon" style="--delay: 1s">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="float-icon" style="--delay: 2s">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="float-icon" style="--delay: 3s">
+                            <i class="fab fa-css3"></i>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="section-header">
+            <span class="section-number">01</span>
+            <h2 class="section-title">À Propos de Moi</h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="about-container">
+            <div class="about-image-wrapper">
+                <div class="about-image-bg"></div>
+                <img id="aboutImg" alt="DevJ" class="about-image">
+                <div class="tech-dots"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="highlight-text">
+                        Passionné par le développement frontend et basé à Yamoussoukro, Côte d'Ivoire, 
+                        je suis DevJ - un créateur d'expériences web qui allie technique et créativité.
+                    </p>
+                    <p>
+                        Spécialisé dans la création d'interfaces modernes et performantes, j'utilise les 
+                        technologies les plus récentes pour donner vie à des projets ambitieux. Mon approche 
+                        combine esthétique contemporaine, animations fluides et code propre.
+                    </p>
+                    <p>
+                        Actuellement en formation d'ingénieur en intelligence artificielle, je cherche constamment 
+                        à repousser les limites du web et à créer des solutions innovantes qui marquent les esprits.
+                    </p>
+                </div>
+                <div class="about-details">
+                    <div class="detail-item">
+                        <i class="fas fa-user"></i>
+                        <div>
+                            <strong>Nom</strong>
+                            <span>Frejus Kouadio</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Localisation</strong>
+                            <span>Yamoussoukro, Côte d'Ivoire</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <span>devfred58@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Téléphone</strong>
+                            <span>+225 0767998373</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="downloadCVBtn" class="btn btn-primary" type="button">
+                    <i class="fas fa-download"></i>
+                    <span>Télécharger CV</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="section-header">
+            <span class="section-number">02</span>
+            <h2 class="section-title">Compétences Techniques</h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3 class="category-title">
+                    <i class="fas fa-code"></i>
+                    Frontend Development
+                </h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h4>HTML5</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h4>CSS3</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <h4>JavaScript</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h4>React</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <h4>Bootstrap</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>GSAP</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skills-category">
+                <h3 class="category-title">
+                    <i class="fas fa-server"></i>
+                    Backend & Database
+                </h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-php"></i>
+                        </div>
+                        <h4>PHP</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-laravel"></i>
+                        </div>
+                        <h4>Laravel</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="category-title">
+                    <i class="fas fa-tools"></i>
+                    Outils & Design
+                </h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <h4>Git & GitHub</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-figma"></i>
+                        </div>
+                        <h4>Figma</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>Canva</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="88"></div>
+                        </div>
+                        <span class="skill-percentage">88%</span>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h4>Radix UI</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="section-header">
+            <span class="section-number">03</span>
+            <h2 class="section-title">Mes Projets Réalisés</h2>
+            <div class="title-line"></div>
+        </div>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-number">01</div>
+                <div class="project-image">
+                    <img src="dev_fred/asset/eliko.PNG" alt="Eliko Voyage" class="project-img">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <h3>Eliko Voyage</h3>
+                    <p>Interface moderne pour agence de voyage permettant la réservation en ligne, la découverte de destinations et la gestion de séjours personnalisés.</p>
+                    <div class="project-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Réservation en ligne</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Interface responsive</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Dashboard admin</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href=" https://devj-58.github.io/eliko_voyage/" class="project-link" title="Voir le projet">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/devj-58" class="project-link" title="Code source">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">02</div>
+                <div class="project-image">
+                    <img src="dev_fred/asset/santeAI.jpg" alt="SanteAI" class="project-img">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Google AI</span>
+                        <span class="tag">WebRTC</span>
+                    </div>
+                    <h3>SanteAI</h3>
+                    <p>Plateforme innovante de télémédecine connectant patients et professionnels de santé avec consultations vidéo, gestion de dossiers médicaux et prescriptions en ligne.</p>
+                    <div class="project-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Consultations vidéo</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Dossiers médicaux</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>IA intégrée</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://devpost.com/software/santeai" class="project-link" title="Voir le projet">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/devj-58" class="project-link" title="Code source">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">03</div>
+                <div class="project-image">
+                    <img src="dev_fred/asset/uiya.PNG" alt="UIYA" class="project-img">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <h3>Système de Gestion de Bibliothèque - UIYA</h3>
+                    <p>Projet réalisé pour l'Université Internationale de Yamoussoukro. Système complet avec espace bibliothécaire et lecteur.</p>
+                    <div class="project-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Gestion temps réel</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Suivi des lecteurs</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Système de scan</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://bibliotheque.igl-uiya.com/" class="project-link" title="Voir le projet">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/devj-58" class="project-link" title="Code source">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">04</div>
+                <div class="project-image">
+                    <img src="dev_fred/asset/GSB.jpg" alt="GSB" class="project-img">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <h3>GSB - Gestion de Stock</h3>
+                    <p>Système complet de gestion de stock incluant inventaire en temps réel, suivi des ventes et analyses statistiques avancées.</p>
+                    <div class="project-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Inventaire temps réel</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Alertes automatiques</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Rapports détaillés</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link" title="Voir le projet">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/devj-58" class="project-link" title="Code source">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">05</div>
+                <div class="project-image">
+                    <img src="dev_fred/asset/zikmu.jpg" alt="ZikmuCI" class="project-img">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <h3>ZikmuCI</h3>
+                    <p>Plateforme musicale ivoirienne minimaliste célébrant la richesse de la musique populaire (Coupé-Décalé, Zouglou, Afrobeat). Design responsive noir/blanc avec accents orange ivoire.</p>
+                    <div class="project-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Design responsive mobile-first</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Animations fluides CSS3</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Navigation intuitive</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://devj-58.github.io/ZikmuCi/index.html" class="project-link" title="Voir le projet" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/devj-58" class="project-link" title="Code source">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">06</div>
+                <div class="project-image">
+                    <img src="dev_fred/asset/terasse.jpg" alt="Terasse" class="project-img">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <h3>Terasse</h3>
+                    <p>Petit site vitrine proposant articles éducatifs et ressources sur le changement climatique en Côte d'Ivoire. Design responsive, galerie d'illustrations optimisée et navigation fixe avec état actif.</p>
+                    <div class="project-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Navigation fixe et accessible</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Images optimisées (répertoire asset)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Layout deux‑colonnes réactif</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://terasse-ivoire.vercel.app" class="project-link" title="Voir le projet" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/devj-58" class="project-link" title="Code source">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="section-header">
+            <span class="section-number">04</span>
+            <h2 class="section-title">Services & Tarifs</h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>Site Vitrine</h3>
+                <div class="service-price">300 000 <span>FCFA</span></div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Design moderne et responsive</li>
+                    <li><i class="fas fa-check"></i> Jusqu'à 5 pages</li>
+                    <li><i class="fas fa-check"></i> Formulaire de contact</li>
+                    <li><i class="fas fa-check"></i> Optimisation SEO de base</li>
+                    <li><i class="fas fa-check"></i> Hébergement inclus 1 an</li>
+                    <li><i class="fas fa-check"></i> Support 24/7</li>
+                </ul>
+                <div class="service-actions">
+                    <a href="#contact" class="btn btn-outline">Commander</a>
+                    <a href="site-vitrine.html" class="btn btn-ghost">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="service-card featured">
+                <div class="featured-badge">Populaire</div>
+                <div class="service-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3>Site E-commerce</h3>
+                <div class="service-price">500 000 <span>FCFA</span></div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Boutique en ligne complète</li>
+                    <li><i class="fas fa-check"></i> Gestion produits illimitée</li>
+                    <li><i class="fas fa-check"></i> Paiement sécurisé</li>
+                    <li><i class="fas fa-check"></i> Tableau de bord admin</li>
+                    <li><i class="fas fa-check"></i> Formation incluse</li>
+                    <li><i class="fas fa-check"></i> Support prioritaire</li>
+                </ul>
+                <div class="service-actions">
+                    <a href="#contact" class="btn btn-primary">Commander</a>
+                    <a href="ecommerce.html" class="btn btn-ghost">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Solution Sur Mesure</h3>
+                <div class="service-price">Sur Devis</div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Solution 100% personnalisée</li>
+                    <li><i class="fas fa-check"></i> Fonctionnalités avancées</li>
+                    <li><i class="fas fa-check"></i> Intégrations sur mesure</li>
+                    <li><i class="fas fa-check"></i> Support prioritaire</li>
+                    <li><i class="fas fa-check"></i> Évolutivité garantie</li>
+                    <li><i class="fas fa-check"></i> Maintenance incluse</li>
+                </ul>
+                <div class="service-actions">
+                    <a href="#contact" class="btn btn-outline">Discutons-en</a>
+                    <a href="sur-mesure.html" class="btn btn-ghost">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="section methodology" id="methodology">
+        <div class="methodology-wrapper">
+            <div class="methodology-left">
+                <div class="methodology-header">
+                    <span class="section-tag">// PROTOCOLES_SYSTÈME</span>
+                    <h2 class="section-title-big">MÉTHODOLOGIE<br>DE TRAVAIL</h2>
+                    <p class="methodology-description">
+                        Une approche structurée pour garantir des résultats prévisibles et performants. 
+                        Chaque étape est une validation binaire vers l'excellence de votre projet.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="methodology-right">
+                <div class="methodology-steps">
+                    <div class="methodology-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3 class="step-title">ANALYSE & AUDIT</h3>
+                            <p class="step-description">
+                                Compréhension des besoins, définition des objectifs et audit de l'existant. 
+                                Initialisation des paramètres du projet avec cartographie complète.
+                            </p>
+                            <div class="step-tags">
+                                <span class="step-tag">Cahier des charges</span>
+                                <span class="step-tag">Benchmark</span>
+                                <span class="step-tag">Planning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="methodology-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3 class="step-title">CONCEPTION & UI</h3>
+                            <p class="step-description">
+                                Design des maquettes et prototypage interactif. Création de l'identité visuelle 
+                                du système avec une attention particulière à l'expérience utilisateur.
+                            </p>
+                            <div class="step-tags">
+                                <span class="step-tag">Figma</span>
+                                <span class="step-tag">Prototypes</span>
+                                <span class="step-tag">Design System</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="methodology-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3 class="step-title">DÉVELOPPEMENT</h3>
+                            <p class="step-description">
+                                Codage propre et optimisé. Intégration des fonctionnalités et animations 
+                                avec architecture scalable et maintenable pour l'évolution.
+                            </p>
+                            <div class="step-tags">
+                                <span class="step-tag">Code Clean</span>
+                                <span class="step-tag">Git Versioning</span>
+                                <span class="step-tag">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="methodology-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3 class="step-title">TESTS & VALIDATION</h3>
+                            <p class="step-description">
+                                Tests rigoureux multi-navigateurs et multi-devices. Validation des performances, 
+                                accessibilité et SEO avant mise en production.
+                            </p>
+                            <div class="step-tags">
+                                <span class="step-tag">Testing</span>
+                                <span class="step-tag">Performance</span>
+                                <span class="step-tag">SEO Audit</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="methodology-step">
+                        <div class="step-number">05</div>
+                        <div class="step-content">
+                            <h3 class="step-title">DÉPLOIEMENT</h3>
+                            <p class="step-description">
+                                Mise en ligne sécurisée, formation à l'administration et documentation complète. 
+                                Suivi post-lancement et optimisations continues garantis.
+                            </p>
+                            <div class="step-tags">
+                                <span class="step-tag">Production</span>
+                                <span class="step-tag">Formation</span>
+                                <span class="step-tag">Support 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq" id="faq">
+        <div class="section-header">
+            <span class="section-number">06</span>
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <div class="title-line"></div>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-column">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>
+                            <i class="fas fa-clock"></i>
+                            Quels sont vos délais de livraison ?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Les délais varient selon le projet : 1-2 semaines pour un site vitrine, 3-4 semaines pour un e-commerce, et sur devis pour les solutions sur mesure. Je m'engage à respecter les échéances convenues.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>
+                            <i class="fas fa-paint-brush"></i>
+                            Proposez-vous des services de design ?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, je prends en charge l'intégralité du processus : maquettes sur Figma, développement frontend, animations GSAP, et optimisation responsive. Un design moderne et professionnel est garanti.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>
+                            <i class="fas fa-mobile-alt"></i>
+                            Vos sites sont-ils responsive ?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolument ! Tous mes projets sont entièrement responsive et optimisés pour mobile, tablette et desktop. Je teste sur de multiples appareils pour garantir une expérience parfaite.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>
+                            <i class="fas fa-tools"></i>
+                            Assurez-vous la maintenance ?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, je propose des contrats de maintenance mensuels incluant mises à jour, corrections de bugs, ajout de contenu et support technique. La tranquillité d'esprit est garantie.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-column">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>
+                            <i class="fas fa-rocket"></i>
+                            Comment se déroule un projet ?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>1) Rendez-vous découverte et cahier des charges, 2) Maquettes et validation, 3) Développement avec points réguliers, 4) Tests et ajustements, 5) Livraison et formation, 6) Suivi post-lancement.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>
+                            <i class="fas fa-credit-card"></i>
+                            Quels modes de paiement acceptez-vous ?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>J'accepte les virements bancaires, Mobile Money (Orange, MTN, Moov) et Wave. Paiement en 2 fois : 50% au lancement, 50% à la livraison. Devis gratuit sur demande.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>
+                            <i class="fas fa-graduation-cap"></i>
+                            Proposez-vous des formations ?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui ! Je forme à l'utilisation de votre site (gestion de contenu, ajout de produits). Je propose également du mentorat en développement web (HTML/CSS/JavaScript/React) pour débutants et intermédiaires.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>
+                            <i class="fas fa-globe"></i>
+                            Travaillez-vous à l'international ?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, je travaille avec des clients partout dans le monde via visioconférence. Collaboration fluide en français et anglais, avec des outils professionnels (Slack, Trello, GitHub).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="section-header">
+            <span class="section-number">07</span>
+            <h2 class="section-title">Contactez-Moi</h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-intro">
+                    <h3>Parlons de votre projet</h3>
+                    <p>Vous avez un projet en tête ? N'hésitez pas à me contacter. Je serais ravi d'en discuter et de vous accompagner dans sa réalisation.</p>
+                </div>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:devfred58@gmail.com">devfred58@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/2250767998373">+225 0767998373</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Localisation</h4>
+                            <p>Yamoussoukro, Côte d'Ivoire</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links-contact">
+                    <a href="https://github.com/devj-58" target="_blank" rel="noopener" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/frejus-kouadio-316238329" target="_blank" rel="noopener" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/2250767998373" target="_blank" rel="noopener" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61572566502278" target="_blank" rel="noopener" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i>
+                            Nom complet
+                        </label>
+                        <input type="text" id="name" name="name" required placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">
+                        <i class="fas fa-tag"></i>
+                        Sujet
+                    </label>
+                    <input type="text" id="subject" name="subject" required placeholder="Sujet de votre message">
+                </div>
+                <div class="form-group">
+                    <label for="message">
+                        <i class="fas fa-comment"></i>
+                        Message
+                    </label>
+                    <textarea id="message" name="message" required placeholder="Décrivez votre projet..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Envoyer le message</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="tech-text"><</span>
+                    <span class="name">/DevJ</span>
+                    <span class="tech-text">></span>
+                </div>
+                <p>Créer des expériences web exceptionnelles, une ligne de code à la fois.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#hero">Accueil</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Site Vitrine</a></li>
+                    <li><a href="#services">E-commerce</a></li>
+                    <li><a href="#services">Sur Mesure</a></li>
+                    <li><a href="#contact">Devis Gratuit</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> devfred58@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +225 0767998373</p>
+                <p><i class="fas fa-map-marker-alt"></i> Yamoussoukro, CI</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DevJ - Frejus Kouadio | Tous droits réservés</p>
+            <p class="footer-tagline">Créé avec passion et beaucoup de café <i class="fas fa-coffee"></i></p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button id="scrollTop" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="dev_fred/api-loader.js"></script>
+    <script src="dev_fred/script.js"></script>
+    <script src="dev_fred/cv-generator.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# ============================================
+# PORTFOLIO DEVJ — Configuration Apache
+# Placer à la racine du projet
+# ============================================
+
+# Activer le module rewrite
+Options -Indexes
+RewriteEngine On
+
+# ===== CORS pour l'API =====
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header always set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# ===== Sessions PHP =====
+<IfModule mod_php.c>
+    php_value session.cookie_httponly 1
+    php_value session.use_strict_mode 1
+</IfModule>
+
+# ===== Protection dossier uploads =====
+<FilesMatch "\.(php|php5|phtml)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>

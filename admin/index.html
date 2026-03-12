@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — DevJ Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #6c63ff; --secondary: #ff6584; --accent: #43e97b;
+            --bg: #0a0a0f; --bg2: #12121a; --card: #1a1a2e;
+            --border: rgba(108,99,255,0.2); --text: #e0e0e0; --text-muted: #888;
+        }
+        body { font-family: 'Syne', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(108,99,255,0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(255,101,132,0.06) 0%, transparent 50%); pointer-events: none; }
+        .login-container { width: 100%; max-width: 420px; padding: 20px; position: relative; z-index: 1; }
+        .login-logo { text-align: center; margin-bottom: 40px; }
+        .login-logo .logo-text { font-family: 'Space Mono', monospace; font-size: 2rem; font-weight: 700; color: var(--primary); }
+        .login-logo .logo-text span { color: var(--secondary); }
+        .login-logo p { color: var(--text-muted); font-size: 0.85rem; margin-top: 8px; font-family: 'Space Mono', monospace; }
+        .login-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+        .login-card h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+        .login-card > p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+        .input-wrapper { position: relative; }
+        .input-wrapper i.fa-envelope, .input-wrapper i.fa-lock { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.9rem; }
+        .form-group input { width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px 12px 42px; color: var(--text); font-family: 'Syne', sans-serif; font-size: 0.95rem; transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
+        .form-group input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(108,99,255,0.15); }
+        .toggle-pass { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.9rem; }
+        .btn-login { width: 100%; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border: none; border-radius: 10px; padding: 14px; font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; }
+        .btn-login:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn-login:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        .alert { padding: 12px 16px; border-radius: 10px; font-size: 0.85rem; margin-bottom: 20px; display: none; }
+        .alert.error { background: rgba(255,101,132,0.15); border: 1px solid rgba(255,101,132,0.3); color: #ff6584; }
+        .alert.success { background: rgba(67,233,123,0.15); border: 1px solid rgba(67,233,123,0.3); color: #43e97b; }
+        .back-link { display: block; text-align: center; margin-top: 20px; color: var(--text-muted); font-size: 0.85rem; text-decoration: none; transition: color 0.2s; }
+        .back-link:hover { color: var(--primary); }
+        .spinner { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.6s linear infinite; display: none; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-logo">
+            <div class="logo-text">&lt;<span>/DevJ</span>&gt;</div>
+            <p>// ESPACE_ADMINISTRATION</p>
+        </div>
+        <div class="login-card">
+            <h1>Connexion Admin</h1>
+            <p>Accédez à votre tableau de bord</p>
+            <div class="alert error" id="alertError"></div>
+            <div class="alert success" id="alertSuccess"></div>
+            <div class="form-group">
+                <label>Email</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="votre@email.com" autocomplete="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+                    <button class="toggle-pass" type="button" onclick="togglePass()">
+                        <i class="fas fa-eye" id="eyeIcon"></i>
+                    </button>
+                </div>
+            </div>
+            <button class="btn-login" id="btnLogin" onclick="login()">
+                <span id="btnText">Se connecter</span>
+                <div class="spinner" id="spinner"></div>
+                <i class="fas fa-arrow-right" id="btnIcon"></i>
+            </button>
+        </div>
+        <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
+    </div>
+
+    <script>
+        const API = 'api/index.php';
+
+        // Si déjà connecté → dashboard
+        (function() {
+            const token = localStorage.getItem('devj_token');
+            if (!token) return;
+            fetch(API + '?section=check-auth', {
+                headers: { 'Authorization': 'Bearer ' + token }
+            })
+            .then(r => r.json())
+            .then(d => { if (d.success) window.location.href = 'dashboard.html'; })
+            .catch(() => {}); // silencieux — ne pas bloquer la page login
+        })();
+
+        function togglePass() {
+            const input = document.getElementById('password');
+            const icon  = document.getElementById('eyeIcon');
+            input.type  = input.type === 'password' ? 'text' : 'password';
+            icon.className = input.type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
+        }
+
+        document.getElementById('password').addEventListener('keydown', e => {
+            if (e.key === 'Enter') login();
+        });
+
+        async function login() {
+            const email    = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const btn      = document.getElementById('btnLogin');
+            const spinner  = document.getElementById('spinner');
+            const btnText  = document.getElementById('btnText');
+            const btnIcon  = document.getElementById('btnIcon');
+            const errDiv   = document.getElementById('alertError');
+            const okDiv    = document.getElementById('alertSuccess');
+
+            errDiv.style.display = 'none';
+            okDiv.style.display  = 'none';
+
+            if (!email || !password) {
+                errDiv.textContent = 'Veuillez remplir tous les champs.';
+                errDiv.style.display = 'block';
+                return;
+            }
+
+            btn.disabled = true;
+            spinner.style.display = 'block';
+            btnText.textContent = 'Connexion...';
+            btnIcon.style.display = 'none';
+
+            try {
+                const res = await fetch(API + '?section=login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const d = await res.json();
+
+                if (d.success && d.data && d.data.token) {
+                    localStorage.setItem('devj_token', d.data.token);
+                    okDiv.textContent = 'Connexion réussie ! Redirection...';
+                    okDiv.style.display = 'block';
+                    setTimeout(() => { window.location.href = 'dashboard.html'; }, 500);
+                } else {
+                    errDiv.textContent = d.message || 'Identifiants incorrects.';
+                    errDiv.style.display = 'block';
+                    btn.disabled = false;
+                    spinner.style.display = 'none';
+                    btnText.textContent = 'Se connecter';
+                    btnIcon.style.display = 'inline';
+                }
+            } catch (e) {
+                errDiv.textContent = 'Erreur de connexion au serveur.';
+                errDiv.style.display = 'block';
+                btn.disabled = false;
+                spinner.style.display = 'none';
+                btnText.textContent = 'Se connecter';
+                btnIcon.style.display = 'inline';
+            }
+        }
+    </script>
+</body>
+</html>
